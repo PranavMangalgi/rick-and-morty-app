@@ -5,6 +5,7 @@
   background-color: hsl(209, 23%, 22%);
   padding: 1rem;
   width: 100%;
+  box-sizing: border-box;
 }
 .appHeading {
   color: #fff;
