@@ -89,7 +89,7 @@ body {
 
 @media (min-width: 800px) {
   body {
-    min-height: 80vh;
+    min-height: 100vh;
   }
   .characterInfo {
     width: 100%;
