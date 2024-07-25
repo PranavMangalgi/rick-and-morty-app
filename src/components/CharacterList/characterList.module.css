@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  max-width: 90%;
 }
 
 .searchFilter {
@@ -89,7 +90,6 @@
 
 @media (min-width: 568px) {
   .cardList {
-    width: 750px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -100,11 +100,14 @@
 
 @media (min-width: 750px) {
   .cardList {
-    width: 1000px;
     gap: 3rem 4rem;
   }
 
   .filterData {
     margin: 1rem 0 1rem -2rem;
+  }
+
+  .filterData{
+    margin-left: 4rem;
   }
 }
