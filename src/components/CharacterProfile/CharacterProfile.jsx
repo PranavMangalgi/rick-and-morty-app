@@ -53,9 +53,11 @@ function CharacterProfile() {
         <p>
           <strong>Status:</strong> {characterData.status}
         </p>
-        <p>
-          <strong>Type:</strong> {characterData.type}
-        </p>
+        {characterData.type && (
+          <p>
+            <strong>Type:</strong> {characterData.type}
+          </p>
+        )}
         <h2>Origin</h2>
         <p>{characterData.origin.name}</p>
         <h2>Location</h2>
