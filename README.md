@@ -1,8 +1,30 @@
-# React + Vite
+# Rick and Morty App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple application to browse and search characters from the Rick and Morty series using React and GraphQL.
 
-Currently, two official plugins are available:
+## Components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### CharacterList
+Fetches and displays a list of characters from the Rick and Morty API.
+
+### CharacterCard
+Displays individual character details.
+
+### CharacterProfile
+Navigates to the character page and shows details pertaining to the character, once you click on the character card
+
+## Queries
+
+### `queries.js`
+Contains GraphQL queries for fetching data from the Rick and Morty API.
+
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **Vite**: Frontend build tool for faster development.
+- **GraphQL**: Query language for APIs.
+- **CSS**: Styling for the application.
+
+## Responsive Design
+The app is designed to be responsive, adapting to different screen sizes and devices using CSS media queries and flexible layout components. This project is styles by CSS modules.
+
