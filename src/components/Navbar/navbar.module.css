@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: hsl(209, 23%, 22%);
+  padding: 1rem;
+  width: 100%;
+}
+.appHeading {
+  color: #fff;
+  font-weight: 650;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 568px) {
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .appHeading {
+    font-size: 1.25rem;
+  }
+}

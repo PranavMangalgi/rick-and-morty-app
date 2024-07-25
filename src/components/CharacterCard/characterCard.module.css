@@ -1,0 +1,46 @@
+.card {
+  width: 200px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(209, 23%, 22%);
+  color: #ffffff;
+  position: relative;
+  border-radius: 1rem;
+}
+
+.imageContainer {
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.info {
+  position: absolute;
+  bottom: 140px;
+  font-size: 0.9rem;
+  padding: 12px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lastAndFirstSeen > div:first-child {
+  color: rgb(194, 193, 193);
+  font-weight: 600;
+}
