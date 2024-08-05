@@ -45,6 +45,11 @@ body {
 
   gap: 1rem;
 }
+
+.details p {
+  cursor: pointer;
+}
+
 .episodes {
   display: flex;
   flex-direction: column;
