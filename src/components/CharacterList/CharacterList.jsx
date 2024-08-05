@@ -147,7 +147,9 @@ function CharacterList() {
   }
 
   return (
-    <div style={{ display:'flex', flexDirection:'column', alignItems:'center' }}>
+    <div
+      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+    >
       <div className={styles.searchFilter}>
         <div className={styles.searchBar}>
           <CiSearch className="search-icon" style={{ color: 'white' }} />

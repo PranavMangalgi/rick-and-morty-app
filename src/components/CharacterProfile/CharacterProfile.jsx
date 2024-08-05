@@ -69,9 +69,11 @@ function CharacterProfile() {
           <strong>Status:</strong> {characterData.status}
         </p>
         {characterData.type && (
-          <p onClick={() => {
-            navigate(`/?type=${characterData?.type}`)
-          }}>
+          <p
+            onClick={() => {
+              navigate(`/?type=${characterData?.type}`)
+            }}
+          >
             <strong>Type:</strong> {characterData.type}
           </p>
         )}

@@ -6,7 +6,12 @@ function Navbar() {
   return (
     <nav className={styles.nav}>
       {/* <Link to="/" style={{ textDecoration: 'none' }}> */}
-        <div className={styles.appHeading} onClick={()=>window.location.href='/'}>Rick & Morty</div>
+      <div
+        className={styles.appHeading}
+        onClick={() => (window.location.href = '/')}
+      >
+        Rick & Morty
+      </div>
       {/* </Link> */}
     </nav>
   )
