@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { GET_CHARACTER_BYID } from '../apollo/queries'
 import styles from './characterProfile.module.css'
 import { IoMdArrowRoundBack } from 'react-icons/io'
+// import { Link } from 'react-router-dom'
 
 function CharacterProfile() {
   const { id } = useParams()
@@ -44,17 +45,33 @@ function CharacterProfile() {
 
       <div className={styles.details}>
         <h1>{characterData.name}</h1>
-        <p>
+
+        <p
+          onClick={() => {
+            navigate(`/?gender=${characterData?.gender}`)
+          }}
+        >
           <strong>Gender:</strong> {characterData.gender}
         </p>
-        <p>
+
+        <p
+          onClick={() => {
+            navigate(`/?species=${characterData?.species}`)
+          }}
+        >
           <strong>Species:</strong> {characterData.species}
         </p>
-        <p>
+        <p
+          onClick={() => {
+            navigate(`/?status=${characterData?.status}`)
+          }}
+        >
           <strong>Status:</strong> {characterData.status}
         </p>
         {characterData.type && (
-          <p>
+          <p onClick={() => {
+            navigate(`/?type=${characterData?.type}`)
+          }}>
             <strong>Type:</strong> {characterData.type}
           </p>
         )}
@@ -74,7 +91,7 @@ function CharacterProfile() {
           <strong>Episodes featured in: </strong>
           <span>
             {characterData?.episode.map((episode, idx) => (
-              <div key={idx}>{episode.name}, </div>
+              <p key={idx}>{episode.name}, </p>
             ))}
           </span>
         </p>

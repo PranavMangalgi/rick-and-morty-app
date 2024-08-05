@@ -11,31 +11,52 @@ function CharacterList() {
   const [currentPage, setCurrentPage] = useState(1)
   const [inputText, setInputText] = useState('')
   const [displayText, setDisplayText] = useState('')
-  const [searchFilter, setSearchFilter] = useState('characters')
+  const [searchFilter, setSearchFilter] = useState(
+    location?.state?.filter || 'characters'
+  )
+
+  const searchParams = useMemo(
+    () => new URLSearchParams(window.location.search),
+    []
+  )
+
+  useEffect(() => {
+    if (searchParams.has('gender')) {
+      setSearchFilter('gender')
+    } else if (searchParams.has('species')) {
+      setSearchFilter('species')
+    } else if (searchParams.has('status')) {
+      setSearchFilter('status')
+    } else if (searchParams.has('type')) {
+      setSearchFilter('type')
+    }
+  }, [searchParams])
+
+  const payload = searchParams.get(searchFilter) || undefined
 
   const queryParams = useMemo(() => {
     let params = { page: currentPage }
     switch (searchFilter) {
       case 'characters':
-        params.name = inputText || undefined
+        params.name = inputText || payload
         break
       case 'gender':
-        params.gender = inputText || 'male' || undefined
+        params.gender = inputText || payload
         break
       case 'species':
-        params.species = inputText || undefined
+        params.species = inputText || payload
         break
       case 'status':
-        params.status = inputText || undefined
+        params.status = inputText || payload
         break
-      case 'types':
-        params.type = inputText || undefined
+      case 'type':
+        params.type = inputText || payload
         break
       default:
         break
     }
     return params
-  }, [currentPage, inputText, searchFilter])
+  }, [currentPage, inputText, searchFilter, payload])
 
   const { loading, data, error, fetchMore } = useQuery(GET_CHARACTERS, {
     variables: queryParams,
@@ -135,7 +156,7 @@ function CharacterList() {
             type="text"
             value={displayText}
             onChange={handleInputChange}
-            placeholder={`Search for ${searchFilter}`}
+            placeholder={payload || `Search for ${searchFilter}`}
           />
         </div>
         <div className={styles.filterData}>
@@ -150,7 +171,7 @@ function CharacterList() {
             <option value="episodes">Episodes</option>
             <option value="gender">Gender</option>
             <option value="species">Species</option>
-            <option value="types">Type</option>
+            <option value="type">Type</option>
           </select>
         </div>
       </div>

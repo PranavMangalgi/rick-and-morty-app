@@ -1,6 +1,6 @@
 .card {
   width: 200px;
-  height: 450px;
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -13,7 +13,7 @@
 }
 
 .imageContainer {
-  position: absolute;
+  position: relative;
   top: 0;
   background-color: transparent;
   width: 200px;
@@ -29,15 +29,24 @@
 }
 
 .info {
-  position: absolute;
-  bottom: 140px;
+  /* position: absolute; */
+  /* bottom: 140px; */
+  /* margin-top: 8rem; */
   font-size: 0.9rem;
   padding: 12px;
   width: 200px;
-  height: 100px;
+  height: auto;
+  /* max-height: ; */
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+.info h2{
+  /* display: inline-block; */
+  white-space: normal;
+  text-overflow: ellipsis;
+  /* line-height: 5; */
 }
 
 .lastAndFirstSeen > div:first-child {
